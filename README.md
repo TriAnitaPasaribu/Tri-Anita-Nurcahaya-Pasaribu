@@ -1,6 +1,6 @@
 # About Me
 # Selamat Datang di Perpustakaan Tri Anita
-![Uploading perpustakaaan   ub.jpeg…]()
+![Uploading perpustakaan briwijaya.jpg…]()
 
 <body>
 Hi, ini adalah Homepage Perpustakaan Tri Anita. Perpustakaan Tri Anita dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
