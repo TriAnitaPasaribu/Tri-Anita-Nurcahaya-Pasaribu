@@ -39,3 +39,46 @@ Hi, ini adalah Homepage Perpustakaan Tri Anita. Perpustakaan Tri Anita dibuat un
     <tr>
         <td>Email</td>
         <td>trianitanurcahayapasaribu@gmail.com</td>
+        <form
+  action="https://formspree.io/f/{FORM_ID}"
+  class="fs-form"
+  target="_top"
+  method="POST"
+>
+  <div class="fs-field">
+    <label class="fs-label" for="name">Name</label>
+    <input class="fs-input" id="name" name="name" />
+  </div>
+  <div class="fs-field">
+    <label class="fs-label" for="email">Email</label>
+    <input class="fs-input" id="email" name="email" required />
+  </div>
+  <div class="fs-field">
+    <label class="fs-label" for="message">Message</label>
+    <textarea class="fs-textarea" id="message" name="message"></textarea>
+  </div>
+  <div class="fs-button-group">
+    <button class="fs-button" type="submit">Submit</button>
+  </div>
+</form><form
+  action="https://formspree.io/f/{FORM_ID}"
+  class="fs-form"
+  target="_top"
+  method="POST"
+>
+  <div class="fs-field">
+    <label class="fs-label" for="name">Name</label>
+    <input class="fs-input" id="name" name="name" />
+  </div>
+  <div class="fs-field">
+    <label class="fs-label" for="email">Email</label>
+    <input class="fs-input" id="email" name="email" required />
+  </div>
+  <div class="fs-field">
+    <label class="fs-label" for="message">Message</label>
+    <textarea class="fs-textarea" id="message" name="message"></textarea>
+  </div>
+  <div class="fs-button-group">
+    <button class="fs-button" type="submit">Submit</button>
+  </div>
+</form>
