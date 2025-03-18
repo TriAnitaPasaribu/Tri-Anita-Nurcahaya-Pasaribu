@@ -1,70 +1,61 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tri Anita Nurcahaya Pasaribu</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+          document.write("<b>Selamat Datang</b>")  
+    </script>
     <style>
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             height: 100vh;
-            background-color: #e0ddd3;
-            overflow: hidden;
+            background-color: #d9dedb;
+            overflow: auto;
+        }
+        .container {
+            position: relative;
+        }
+        .cat {
+            width: 100px;
+            height: 100px;
+            background: url('https://i.imgur.com/OY2NvoI.png') no-repeat center/cover;
+            position: absolute;
+            animation: jump 2s infinite ease-in-out;
+        }
+        .bubble {
+            position: absolute;
+            left: 50px;
+            top: -40px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
         }
         .navbar {
-            position: absolute;
-            top: 0;
-            width: 100%;
             background: #333;
             padding: 10px;
-            display: flex;
-            justify-content: center;
+            width: 100%;
+            text-align: center;
         }
         .navbar a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
         }
-        .container {
-            position: relative;
-            text-align: center;
-            max-width: 800px;
-        }
-        .lotso {
-            width: 100px;
-            height: 100px;
-            background: url('https://upload.wikimedia.org/wikipedia/en/7/7b/Lotso_Huggin%27_Bear.png') no-repeat center/cover;
-            position: absolute;
-            bottom: 0;
-            animation: bounce 2s infinite;
-        }
-        .speech {
-            position: absolute;
-            top: -50px;
-            left: 60px;
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-            display: none;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
     </style>
-    <script>
-          document.addEventListener("DOMContentLoaded", function() {
-              document.write("<b>Selamat Datang</b>");
-          });
-    </script>
 </head>
 <body>
-    <!-- Navbar -->
     <div class="navbar">
         <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
@@ -74,37 +65,24 @@
     </div>
 
     <div class="container">
-        <div class="main-content">
-            <h1>Selamat Datang di Website Perpustakaan Tri Anita Pasaribu</h1> 
-            <h2>Temukan Keajaiban dalam Setiap Halaman Buku</h2>
-            <h3>Sumber Pengetahuan, Wawasan, dan Inspirasi</h3>
-            <p>Perpustakaan ini bukan sekadar tempat menyimpan buku, tetapi juga gerbang menuju dunia yang penuh dengan ilmu, cerita, dan gagasan besar.</p>
-            <p>Jangan ragu untuk menjelajahi setiap sudut website ini. Temukan koleksi favorit Anda, ikuti kegiatan menarik, dan mari bersama-sama membangun budaya literasi yang lebih kuat!</p>
-        </div>
+        <div class="cat"></div>
+        <div class="bubble">Hello!</div>
     </div>
-    
+
+    <div class="main-content">
+        <h1>Selamat Datang di Website Perpustakaan Tri Anita Pasaribu</h1> 
+        <h2>Temukan Keajaiban dalam Setiap Halaman Buku</h2>
+        <h3>Sumber Pengetahuan, Wawasan, dan Inspirasi </h3>
+        <p> Perpustakaan ini bukan sekadar tempat menyimpan buku, tetapi juga gerbang menuju dunia yang penuh dengan ilmu, cerita, dan gagasan besar...</p>
+    </div>
+
     <div>
-        <button>Halo, Selamat Datang di Website Saya</button>
+        <button> Halo, Selamat Datang di Website Saya</button>
     </div>
 
     <h3>Halaman lain</h3>
     <a href="https://lib.ub.ac.id/id/" target="_blank" rel="noopener noreferrer">
         Perpustakaan UB - "maju-maju jaya"
     </a>
-
-    <!-- Animasi Lotso -->
-    <div class="container">
-        <div class="lotso" onclick="showSpeech()"></div>
-        <div class="speech" id="speech">Hello!</div>
-    </div>
-
-    <script>
-        function showSpeech() {
-            document.getElementById('speech').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('speech').style.display = 'none';
-            }, 2000);
-        }
-    </script>
 </body>
 </html>
