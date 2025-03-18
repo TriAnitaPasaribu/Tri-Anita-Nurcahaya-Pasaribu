@@ -38,8 +38,9 @@ p {
     border-radius: 5px;
 }
 
+/* Perbaikan warna link navbar */
 .navbar a {
-    color: rgb(14, 156, 102)6, 194, 126)55, 255, 255)55, 255, 255);
+    color: rgb(14, 156, 102);
     text-decoration: none;
     margin-left: 15px;
     font-weight: bold;
@@ -59,4 +60,15 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Mengatur tampilan footer agar selalu di bawah */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 10px 0;
 }

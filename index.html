@@ -14,7 +14,7 @@
             flex-direction: column;
             align-items: center;
             height: 100vh;
-            background-color: #d9dedb;
+            background-color: #e4076e;
             overflow: hidden;
             position: relative;
         }
@@ -35,15 +35,9 @@
             text-align: right;
         }
         .navbar a {
-            color: white;
+            color: rgb(152, 10, 165);
             text-decoration: none;
             margin: 0 15px;
-        }
-        .footer {
-            position: absolute;
-            bottom: 10px;
-            color: red;
-            font-weight: bold;
         }
     </style>
 </head>
@@ -52,8 +46,7 @@
         <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
-        <a href="kontak.html">Blog</a>
-        <a href="script.html">JavaScript</a>    
+        <a href="kontak.html">Blog</a>  
     </div>
 
     <div class="ball" id="movingBall"></div>
@@ -73,10 +66,6 @@
     <a href="https://lib.ub.ac.id/id/" target="_blank" rel="noopener noreferrer">
         Perpustakaan UB - "maju-maju jaya"
     </a>
-
-    <div class="footer">
-        &copy; 2025 Perpustakaan Tri Anita Nurcahaya Pasaribu
-    </div>
 
     <script>
         let ball = document.getElementById("movingBall");
@@ -100,5 +89,11 @@
         }
         setInterval(moveBall, 20);
     </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Perpustakaan Tri Anita Nurcahaya Pasaribu</p>
+    </footer>
+
 </body>
 </html>
