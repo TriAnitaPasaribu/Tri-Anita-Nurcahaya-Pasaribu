@@ -15,20 +15,23 @@
             align-items: center;
             height: 100vh;
             background-color: #d9dedb;
-            overflow: auto;
+            overflow: hidden;
             position: relative;
         }
         .container {
             position: relative;
             margin-top: 50px;
-            width: 100%;
-            height: 300px;
+            width: 80vw;
+            height: 50vh;
+            border: 2px solid #333;
+            overflow: hidden;
+            background-color: white;
         }
-        .box {
-            width: 50px;
-            height: 50px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Teddy_Bear.svg/120px-Teddy_Bear.svg.png');
-            background-size: cover;
+        .ball {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            border-radius: 50%;
             position: absolute;
         }
         .navbar {
@@ -54,7 +57,7 @@
     </div>
 
     <div class="container">
-        <div class="box" id="movingBox"></div>
+        <div class="ball" id="movingBall"></div>
     </div>
 
     <div class="main-content">
@@ -74,14 +77,27 @@
     </a>
 
     <script>
-        let box = document.getElementById("movingBox");
+        let ball = document.getElementById("movingBall");
         let container = document.querySelector(".container");
-        function moveBox() {
-            let x = Math.random() * (container.clientWidth - 50);
-            let y = Math.random() * (container.clientHeight - 50);
-            box.style.transform = `translate(${x}px, ${y}px)`;
+        let dx = 3;
+        let dy = 3;
+        let x = 10;
+        let y = 10;
+
+        function moveBall() {
+            x += dx;
+            y += dy;
+            
+            if (x + 40 > container.clientWidth || x < 0) {
+                dx *= -1;
+            }
+            if (y + 40 > container.clientHeight || y < 0) {
+                dy *= -1;
+            }
+            
+            ball.style.transform = `translate(${x}px, ${y}px)`;
         }
-        setInterval(moveBox, 1000);
+        setInterval(moveBall, 20);
     </script>
 </body>
 </html>
