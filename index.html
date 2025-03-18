@@ -18,15 +18,6 @@
             overflow: hidden;
             position: relative;
         }
-        .container {
-            position: relative;
-            margin-top: 50px;
-            width: 80vw;
-            height: 50vh;
-            border: 2px solid #333;
-            overflow: hidden;
-            background-color: white;
-        }
         .ball {
             width: 50px;
             height: 50px;
@@ -56,9 +47,7 @@
         <a href="script.html">JavaScript</a>    
     </div>
 
-    <div class="container">
-        <div class="ball" id="movingBall"></div>
-    </div>
+    <div class="ball" id="movingBall"></div>
 
     <div class="main-content">
         <h1>Selamat Datang di Website Perpustakaan Tri Anita Pasaribu</h1> 
@@ -78,20 +67,19 @@
 
     <script>
         let ball = document.getElementById("movingBall");
-        let container = document.querySelector(".container");
-        let dx = 3;
-        let dy = 3;
-        let x = 10;
-        let y = 10;
+        let dx = Math.random() * 6 - 3;
+        let dy = Math.random() * 6 - 3;
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
 
         function moveBall() {
             x += dx;
             y += dy;
             
-            if (x + 50 > container.clientWidth || x < 0) {
+            if (x + 50 > window.innerWidth || x < 0) {
                 dx *= -1;
             }
-            if (y + 50 > container.clientHeight || y < 0) {
+            if (y + 50 > window.innerHeight || y < 0) {
                 dy *= -1;
             }
             
