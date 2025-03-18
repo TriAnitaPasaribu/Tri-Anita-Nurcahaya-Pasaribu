@@ -1,65 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tri Anita Nurcahaya Pasaribu</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #e0ddd3;
+            overflow: hidden;
+        }
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            max-width: 800px;
+        }
+        .lotso {
+            width: 100px;
+            height: 100px;
+            background: url('https://upload.wikimedia.org/wikipedia/en/7/7b/Lotso_Huggin%27_Bear.png') no-repeat center/cover;
+            position: absolute;
+            bottom: 0;
+            animation: bounce 2s infinite;
+        }
+        .speech {
+            position: absolute;
+            top: -50px;
+            left: 60px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            display: none;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
     <script>
-          document.write(<b>"Selamat Datang"</b>)  
+          document.addEventListener("DOMContentLoaded", function() {
+              document.write("<b>Selamat Datang</b>");
+          });
     </script>
 </head>
 <body>
-
     <!-- Navbar -->
     <div class="navbar">
         <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
-        <a href="kontak.html">Blog<a/>
-        <a href="script.html">javascript
-        </a>    
+        <a href="kontak.html">Blog</a>
+        <a href="script.html">JavaScript</a>    
     </div>
 
     <div class="container">
         <div class="main-content">
             <h1>Selamat Datang di Website Perpustakaan Tri Anita Pasaribu</h1> 
             <h2>Temukan Keajaiban dalam Setiap Halaman Buku</h2>
-            <h3>Sumber Pengetahuan, Wawasan, dan Inspirasi </h3>
-            <p> Perpustakaan ini bukan sekadar tempat menyimpan buku, tetapi juga gerbang menuju dunia yang penuh dengan ilmu, cerita, dan gagasan besar.  
-                Kami hadir untuk membantu Anda menemukan informasi berharga, menjelajahi kreativitas tanpa batas, dan memperluas cakrawala berpikir.  
-                Setiap buku yang Anda baca adalah perjalanan menuju pemahaman yang lebih dalam.  
-                Terima kasih telah berkunjung! Mari kita jelajahi dan temukan inspirasi baru bersama.
-            </p>
-            <p>
-                Di sini, Anda akan menemukan berbagai koleksi buku dari berbagai bidang, mulai dari sastra klasik hingga pengetahuan modern, dari filsafat hingga teknologi terkini.  
-                Setiap halaman yang Anda buka adalah jendela menuju dunia yang lebih luas, di mana ide-ide segar menanti untuk ditemukan dan wawasan baru siap untuk dipahami.
-            </p>
-            <p>
-                Kami percaya bahwa membaca adalah kunci untuk membuka pintu masa depan yang lebih cerah. Oleh karena itu, kami berkomitmen untuk memberikan akses yang mudah dan nyaman  
-                ke sumber bacaan berkualitas. Tak hanya itu, kami juga menyediakan berbagai kegiatan edukatif, diskusi buku, serta komunitas pembaca yang siap berbagi pengalaman dan perspektif baru.
-            </p>
-            <p>
-                Jangan ragu untuk menjelajahi setiap sudut website ini. Temukan koleksi favorit Anda, ikuti kegiatan menarik, dan mari bersama-sama membangun budaya literasi yang lebih kuat!  
-                Selamat menikmati perjalanan membaca Anda.
-           
-            <!-- Tambahan teks baru -->
-         <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
-            Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
-            Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
-            Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
-            Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan! </p>
+            <h3>Sumber Pengetahuan, Wawasan, dan Inspirasi</h3>
+            <p>Perpustakaan ini bukan sekadar tempat menyimpan buku, tetapi juga gerbang menuju dunia yang penuh dengan ilmu, cerita, dan gagasan besar.</p>
+            <p>Jangan ragu untuk menjelajahi setiap sudut website ini. Temukan koleksi favorit Anda, ikuti kegiatan menarik, dan mari bersama-sama membangun budaya literasi yang lebih kuat!</p>
         </div>
     </div>
-
+    
     <div>
-        <button> Halo, Selamat Datang di Website Saya</button>
+        <button>Halo, Selamat Datang di Website Saya</button>
     </div>
 
     <h3>Halaman lain</h3>
     <a href="https://lib.ub.ac.id/id/" target="_blank" rel="noopener noreferrer">
         Perpustakaan UB - "maju-maju jaya"
     </a>
+
+    <!-- Animasi Lotso -->
+    <div class="container">
+        <div class="lotso" onclick="showSpeech()"></div>
+        <div class="speech" id="speech">Hello!</div>
+    </div>
+
+    <script>
+        function showSpeech() {
+            document.getElementById('speech').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('speech').style.display = 'none';
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
-
