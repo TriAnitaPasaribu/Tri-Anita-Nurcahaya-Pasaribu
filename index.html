@@ -28,9 +28,9 @@
             background-color: white;
         }
         .ball {
-            width: 40px;
-            height: 40px;
-            background-color: red;
+            width: 50px;
+            height: 50px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg') no-repeat center/cover;
             border-radius: 50%;
             position: absolute;
         }
@@ -88,10 +88,10 @@
             x += dx;
             y += dy;
             
-            if (x + 40 > container.clientWidth || x < 0) {
+            if (x + 50 > container.clientWidth || x < 0) {
                 dx *= -1;
             }
-            if (y + 40 > container.clientHeight || y < 0) {
+            if (y + 50 > container.clientHeight || y < 0) {
                 dy *= -1;
             }
             
