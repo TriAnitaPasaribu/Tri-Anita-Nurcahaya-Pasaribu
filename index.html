@@ -6,7 +6,7 @@
     <title>Tri Anita Nurcahaya Pasaribu</title>
     <link rel="stylesheet" href="style.css">
     <script>
-          document.write("<b>Selamat Datang</b>")  
+        document.write("<b>Selamat Datang</b>")  
     </script>
     <style>
         body {
@@ -16,21 +16,26 @@
             height: 100vh;
             background-color: #d9dedb;
             overflow: auto;
+            position: relative;
         }
         .container {
             position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
         }
         .bird {
             width: 100px;
             height: 100px;
-            background: url('https://i.imgur.com/6Cfjz0z.png') no-repeat center/cover;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Flying_bird.png') no-repeat center/cover;
             position: absolute;
+            top: 50px;
             animation: fly 5s infinite linear;
         }
         .bubble {
             position: absolute;
-            left: 50px;
-            top: -40px;
+            left: 120px;
+            top: 20px;
             background: white;
             padding: 10px;
             border-radius: 10px;
@@ -39,9 +44,8 @@
             font-weight: bold;
         }
         @keyframes fly {
-            0% { transform: translateX(-100px) translateY(0); }
-            50% { transform: translateX(100px) translateY(-30px); }
-            100% { transform: translateX(200px) translateY(0); }
+            0% { left: -100px; }
+            100% { left: 100%; }
         }
         .navbar {
             background: #333;
