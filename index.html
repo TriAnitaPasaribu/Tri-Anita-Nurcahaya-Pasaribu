@@ -6,7 +6,7 @@
     <title>Tri Anita Nurcahaya Pasaribu</title>
     <link rel="stylesheet" href="style.css">
     <script>
-          document.write("<b>Selamat Datang</b>")  
+        document.write("<b>Selamat Datang</b>");
     </script>
     <style>
         body {
@@ -17,6 +17,11 @@
             background-color: #e4076e;
             overflow: hidden;
             position: relative;
+            transition: background 0.5s, color 0.5s;
+        }
+        .dark-mode {
+            background-color: #222;
+            color: white;
         }
         .ball {
             width: 50px;
@@ -39,9 +44,21 @@
             text-decoration: none;
             margin: 0 15px;
         }
+        button {
+            padding: 10px 15px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #toggle-mode {
+            background: #222;
+            color: white;
+        }
     </style>
 </head>
-<body>
+<body onload="welcomeMessage()">
+
     <div class="navbar">
         <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
@@ -57,19 +74,25 @@
         <p> Perpustakaan ini bukan sekadar tempat menyimpan buku, tetapi juga gerbang menuju dunia yang penuh dengan ilmu, cerita, dan gagasan besar...</p>
     </div>
 
-    <div>
-        <button> Halo, Selamat Datang di Website Saya</button>
-    </div>
+    <button id="toggle-mode">Mode Gelap</button>
 
-    <section id="home"></section>
     <h3>Halaman lain</h3>
     <a href="https://lib.ub.ac.id/id/" target="_blank" rel="noopener noreferrer">
         Perpustakaan UB - "maju-maju jaya"
     </a>
-    <button id="toggle-mode">Mode Gelap</button>
-    </section>
 
     <script>
+        // Mode Gelap
+        document.getElementById("toggle-mode").addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        // Pesan selamat datang otomatis
+        function welcomeMessage() {
+            alert("Halo, Selamat Datang di Website Saya!");
+        }
+
+        // Bola Bergerak
         let ball = document.getElementById("movingBall");
         let dx = 4;
         let dy = 4;
