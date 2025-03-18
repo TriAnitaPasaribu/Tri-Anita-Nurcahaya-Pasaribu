@@ -20,12 +20,12 @@
         .container {
             position: relative;
         }
-        .cat {
+        .bird {
             width: 100px;
             height: 100px;
-            background: url('https://i.imgur.com/OY2NvoI.png') no-repeat center/cover;
+            background: url('https://i.imgur.com/6Cfjz0z.png') no-repeat center/cover;
             position: absolute;
-            animation: jump 2s infinite ease-in-out;
+            animation: fly 5s infinite linear;
         }
         .bubble {
             position: absolute;
@@ -38,9 +38,10 @@
             font-family: Arial, sans-serif;
             font-weight: bold;
         }
-        @keyframes jump {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-30px); }
+        @keyframes fly {
+            0% { transform: translateX(-100px) translateY(0); }
+            50% { transform: translateX(100px) translateY(-30px); }
+            100% { transform: translateX(200px) translateY(0); }
         }
         .navbar {
             background: #333;
@@ -65,7 +66,7 @@
     </div>
 
     <div class="container">
-        <div class="cat"></div>
+        <div class="bird"></div>
         <div class="bubble">Hello!</div>
     </div>
 
