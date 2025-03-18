@@ -67,10 +67,10 @@
 
     <script>
         let ball = document.getElementById("movingBall");
-        let dx = Math.random() * 6 - 3;
-        let dy = Math.random() * 6 - 3;
-        let x = Math.random() * window.innerWidth;
-        let y = Math.random() * window.innerHeight;
+        let dx = 4;
+        let dy = 4;
+        let x = Math.random() * (window.innerWidth - 50);
+        let y = Math.random() * (window.innerHeight - 50);
 
         function moveBall() {
             x += dx;
