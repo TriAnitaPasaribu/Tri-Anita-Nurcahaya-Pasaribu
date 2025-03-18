@@ -21,22 +21,15 @@
         .container {
             position: relative;
             margin-top: 50px;
+            width: 100%;
+            height: 300px;
         }
-        .star {
-            width: 20px;
-            height: 20px;
-            background-color: gold;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        .box {
+            width: 50px;
+            height: 50px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Teddy_Bear.svg/120px-Teddy_Bear.svg.png');
+            background-size: cover;
             position: absolute;
-            animation: spin 2s linear infinite, move 3s infinite alternate ease-in-out;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        @keyframes move {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(100px); }
         }
         .navbar {
             background: #333;
@@ -61,7 +54,7 @@
     </div>
 
     <div class="container">
-        <div class="star"></div>
+        <div class="box" id="movingBox"></div>
     </div>
 
     <div class="main-content">
@@ -79,5 +72,16 @@
     <a href="https://lib.ub.ac.id/id/" target="_blank" rel="noopener noreferrer">
         Perpustakaan UB - "maju-maju jaya"
     </a>
+
+    <script>
+        let box = document.getElementById("movingBox");
+        let container = document.querySelector(".container");
+        function moveBox() {
+            let x = Math.random() * (container.clientWidth - 50);
+            let y = Math.random() * (container.clientHeight - 50);
+            box.style.transform = `translate(${x}px, ${y}px)`;
+        }
+        setInterval(moveBox, 1000);
+    </script>
 </body>
 </html>
