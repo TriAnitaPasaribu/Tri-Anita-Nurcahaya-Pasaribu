@@ -1,6 +1,6 @@
 /* Mengatur tampilan halaman utama */
 body {
-    background-color: #17ecac5b; /* Warna latar belakang terbaru */
+    background-color: #17deec5b; /* Warna latar belakang terbaru */
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
@@ -10,7 +10,7 @@ body {
 /* Mengatur tampilan teks */
 h1 {
     font-size: 36pt; /* Ukuran font tetap */
-    color: #a0dd12; /* Warna teks terbaru */
+    color: #42ecf8; /* Warna teks terbaru */
 }
 
 h2 {
