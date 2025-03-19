@@ -1,54 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tri Anita Nurcahaya Pasaribu</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #111;
+        }
+        canvas {
+            display: block;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+    </style>
     <script>
-          document.write(<b>"Selamat Datang"</b>)  
+        document.addEventListener("DOMContentLoaded", () => {
+            document.write("<b>Selamat Datang</b>");
+        });
     </script>
 </head>
 <body>
-
     <!-- Navbar -->
     <div class="navbar">
         <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
-        <a href="kontak.html">Blog<a/>
+        <a href="kontak.html">Blog</a>
     </div>
 
     <div class="container">
-        <div class="main-content">
-            <h1>Selamat Datang di Website Perpustakaan Tri Anita Pasaribu</h1> 
-            <h2>Temukan Keajaiban dalam Setiap Halaman Buku</h2>
-            <p> Perpustakaan ini bukan sekadar tempat menyimpan buku, tetapi juga gerbang menuju dunia yang penuh dengan ilmu, cerita, dan gagasan besar.  
-                Kami hadir untuk membantu Anda menemukan informasi berharga, menjelajahi kreativitas tanpa batas, dan memperluas cakrawala berpikir.  
-                Setiap buku yang Anda baca adalah perjalanan menuju pemahaman yang lebih dalam.  
-                Terima kasih telah berkunjung! Mari kita jelajahi dan temukan inspirasi baru bersama.
-            </p>
-            <p>
-                Di sini, Anda akan menemukan berbagai koleksi buku dari berbagai bidang, mulai dari sastra klasik hingga pengetahuan modern, dari filsafat hingga teknologi terkini. Setiap halaman yang Anda buka adalah jendela menuju dunia yang lebih luas, di mana ide-ide segar menanti untuk ditemukan dan wawasan baru siap untuk dipahami. Kami percaya bahwa membaca adalah kunci untuk membuka pintu masa depan yang lebih cerah. Oleh karena itu, kami berkomitmen untuk memberikan akses yang mudah dan nyaman  
-                ke sumber bacaan berkualitas. Tak hanya itu, kami juga menyediakan berbagai kegiatan edukatif, diskusi buku, serta komunitas pembaca yang siap berbagi pengalaman dan perspektif baru Jangan ragu untuk menjelajahi setiap sudut website ini. Temukan koleksi favorit Anda, ikuti kegiatan menarik, dan mari bersama-sama membangun budaya literasi yang lebih kuat!  
-                Selamat menikmati perjalanan membaca Anda.
-           
-            <!-- Tambahan teks baru -->
-         <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
-            Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
-            Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
-            Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
-            Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan! </p>
-        </div>
+        <h1>Selamat Datang di Website Perpustakaan Tri Anita Pasaribu</h1>
+        <h2>Temukan Keajaiban dalam Setiap Halaman Buku</h2>
+        <h3>Sumber Pengetahuan, Wawasan, dan Inspirasi</h3>
+        <p>Perpustakaan ini bukan sekadar tempat menyimpan buku, tetapi juga gerbang menuju dunia yang penuh dengan ilmu, cerita, dan gagasan besar...</p>
+        <button>Halo, Selamat Datang di Website Saya</button>
+        <h3>Halaman lain</h3>
+        <a href="https://lib.ub.ac.id/id/" target="_blank" rel="noopener noreferrer">Perpustakaan UB - "maju-maju jaya"</a>
     </div>
 
-    <div>
-        <button> Halo, Selamat Datang di Website Saya</button>
-    </div>
+    <canvas id="particleCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById("particleCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-    <h3>Halaman lain</h3>
-    <a href="https://lib.ub.ac.id/id/" target="_blank" rel="noopener noreferrer">
-      Perpustakaan Tri Anita yang penuh sumber ilmu dalam melakukan kunjungan   Perpustakaan UB - "maju-maju jaya"
-    </a>
+        let particles = [];
+        const particleCount = 100;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.radius = 3;
+                this.dx = (Math.random() - 0.5) * 2;
+                this.dy = (Math.random() - 0.5) * 2;
+            }
+
+            move() {
+                this.x += this.dx;
+                this.y += this.dy;
+                if (this.x <= 0 || this.x >= canvas.width) this.dx *= -1;
+                if (this.y <= 0 || this.y >= canvas.height) this.dy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = "#00ff99";
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0, 255, 153, ${1 - distance / 100})`;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(particle => {
+                particle.move();
+                particle.draw();
+            });
+            connectParticles();
+            requestAnimationFrame(update);
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        update();
+    </script>
 </body>
 </html>
