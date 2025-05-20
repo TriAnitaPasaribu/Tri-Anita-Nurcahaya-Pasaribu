@@ -109,7 +109,9 @@
       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWeM5CsserKminkQylLNnz8q4pMPIvTrf7qtXyVEGQ1BzSAU0zrA9qqfqUmlG633CvB4ofMrenaWjGi8_Ql1QV7-9PqhTrG08o3IqTE27fxOKYZcllgN7mI7f0Bn5IvBVYN76nOavBHbtP/s1600/review+novel+anak+rantau.jpg" alt="Judul Buku 3">
       <h3>Anak Rantau</h3>
       <p>meninggalkan kampung halaman atau kota asalnya untuk tinggal di tempat lain, biasanya demi sekolah, bekerja, atau mencari kehidupan yang lebih baik.</p>
-      <a href="#" class="read-button">Baca</a>
+      <a href="#"class="read-button">Baca</a>
+      </div>
+        
       <!-- Tambah 3 card  -->
     <div class="book-card">
       <img src=https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/104/MTA-174088129/no-brand_no-brand_full01.jpg
@@ -178,7 +180,7 @@
   .read-button:hover {
     background: #388E3C;
 
-     </div> 
+    <div>
            
 <!DOCTYPE html>
 <html lang="id">
@@ -264,128 +266,103 @@
    <div class="details"> 
     🌐 Kunjungi Instagram Kami
 
-
-       <!DOCTYPE html>
+       <div>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Animasi Boneka Lotso</title>
+  <title>Animasi Kupu-Kupu</title>
   <style>
     body {
-      background: linear-gradient(to top, #ffe0ec, #fff);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
+      background: linear-gradient(to top, #cceeff, #ffffff);
+      overflow: hidden;
+      height: 100vh;
     }
 
-    .lotso {
-      position: relative;
-      width: 200px;
-      height: 220px;
-      animation: bounce 2s ease-in-out infinite;
-    }
-
-    /* Kepala */
-    .head {
-      width: 150px;
-      height: 150px;
-      background: #e91e63;
-      border-radius: 50%;
+    .butterfly {
       position: absolute;
-      top: 0;
-      left: 25px;
-      z-index: 2;
+      width: 80px;
+      height: 80px;
+      top: 50%;
+      left: -100px;
+      transform: translateY(-50%);
+      animation: flyAcross 10s linear infinite;
     }
 
-    /* Muka */
-    .face {
-      width: 100px;
-      height: 100px;
-      background: #fce4ec;
-      border-radius: 50%;
+    .wing {
+      width: 40px;
+      height: 60px;
+      background: #ff69b4;
+      border-radius: 70% 70% 0 0;
       position: absolute;
-      top: 25px;
-      left: 25px;
+      top: 10px;
+      animation: flap 0.6s ease-in-out infinite;
     }
 
-    /* Telinga */
-    .ear {
-      width: 50px;
-      height: 50px;
-      background: #e91e63;
-      border-radius: 50%;
-      position: absolute;
-      top: -15px;
+    .wing.left {
+      left: 0;
+      transform-origin: right center;
     }
 
-    .ear.left { left: 0; }
-    .ear.right { right: 0; }
-
-    /* Mata */
-    .eye {
-      width: 10px;
-      height: 10px;
-      background: #000;
-      border-radius: 50%;
-      position: absolute;
-      top: 50px;
+    .wing.right {
+      right: 0;
+      transform-origin: left center;
     }
 
-    .eye.left { left: 45px; }
-    .eye.right { left: 95px; }
-
-    /* Hidung */
-    .nose {
-      width: 20px;
-      height: 15px;
-      background: #6d1b25;
-      border-radius: 50%;
-      position: absolute;
-      top: 70px;
-      left: 65px;
-    }
-
-    /* Badan */
     .body {
-      width: 120px;
-      height: 120px;
-      background: #e91e63;
-      border-radius: 60% 60% 40% 40%;
+      width: 10px;
+      height: 60px;
+      background: #4a148c;
       position: absolute;
-      top: 120px;
-      left: 40px;
+      left: 35px;
+      top: 20px;
+      border-radius: 5px;
     }
 
-    /* Animasi */
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0px);
+    @keyframes flap {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(15deg); }
+    }
+
+    @keyframes flyAcross {
+      0% {
+        left: -100px;
+        top: 50%;
+        transform: rotate(0deg);
+      }
+      25% {
+        top: 30%;
+        transform: rotate(10deg);
       }
       50% {
-        transform: translateY(-20px);
+        top: 70%;
+        transform: rotate(-10deg);
+      }
+      75% {
+        top: 40%;
+        transform: rotate(5deg);
+      }
+      100% {
+        left: 110%;
+        top: 50%;
+        transform: rotate(0deg);
       }
     }
   </style>
 </head>
 <body>
-  <div class="lotso">
-    <div class="ear left"></div>
-    <div class="ear right"></div>
-    <div class="head">
-      <div class="face"></div>
-      <div class="eye left"></div>
-      <div class="eye right"></div>
-      <div class="nose"></div>
-    </div>
+
+  <div class="butterfly">
+    <div class="wing left"></div>
+    <div class="wing right"></div>
     <div class="body"></div>
   </div>
+
 </body>
 </html>
-
-  }
+       
 </style>
 
     <!-- Footer -->
